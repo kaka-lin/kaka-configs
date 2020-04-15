@@ -1,0 +1,13 @@
+" 編輯器喜好設定 
+set nu
+set ai
+set tabstop=4
+set shiftwidth=4
+set cursorline
+set cursorcolumn
+set nocompatible
+
+" Color configuration
+syntax enable
+set bg=dark
+"colorscheme solarized
