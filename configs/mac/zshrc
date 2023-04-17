@@ -113,10 +113,6 @@ export LC_ALL=en_US.UTF-8
 
 # powerlevel9k: https://github.com/Powerlevel9k/powerlevel9k
 
-# Git icon
-#POWERLEVEL9K_VCS_GIT_ICON='\uf1d3'
-#POWERLEVEL9K_VCS_GIT_GITHUB_ICON='\uf09b'
-
 # Anaconda
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(anaconda battery)
 #POWERLEVEL9K_ANACONDA_RIGHT_DELIMITER='>'
@@ -126,18 +122,20 @@ POWERLEVEL9K_ANACONDA_FOREGROUND="white"
 #POWERLEVEL9K_PYTHON_ICON='\ue63c'
 
 # Git
-#POWERLEVEL9K_VCS_GIT_HOOKS=(vcs-detect-changes git-untracked git-aheadbehind git-remotebranch git-tagname)
+POWERLEVEL9K_VCS_GIT_HOOKS=(vcs-detect-changes git-untracked git-aheadbehind git-remotebranch git-tagname)
+POWERLEVEL9K_VCS_GIT_ICON='\uf1d3'
+POWERLEVEL9K_VCS_GIT_GITHUB_ICON='\uf09b'
 POWERLEVEL9K_VCS_CLEAN_FOREGROUND='black'
 POWERLEVEL9K_VCS_CLEAN_BACKGROUND='green'
 POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND='black'
 POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='yellow'
 #POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='white'
 #POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='black'
-#POWERLEVEL9K_VCS_UNTRACKED_ICON='\u25CF'
-#POWERLEVEL9K_VCS_UNSTAGED_ICON='\u00b1'
-#POWERLEVEL9K_VCS_INCOMING_CHANGES_ICON='\u2193'
-#POWERLEVEL9K_VCS_OUTGOING_CHANGES_ICON='\u2191'
-#POWERLEVEL9K_VCS_COMMIT_ICON="\uf417"
+POWERLEVEL9K_VCS_UNTRACKED_ICON='\u25CF'
+POWERLEVEL9K_VCS_UNSTAGED_ICON='\u00b1'
+POWERLEVEL9K_VCS_INCOMING_CHANGES_ICON='\u2193'
+POWERLEVEL9K_VCS_OUTGOING_CHANGES_ICON='\u2191'
+POWERLEVEL9K_VCS_COMMIT_ICON="\uf417"
 
 # command line 左邊想顯示的內容
 #POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir dir_writable vcs vi_mode)
@@ -152,3 +150,8 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time)
 #formulae that put executables in /usr/local/sbin.
 #Consider setting the PATH for example like so:
 export PATH="/usr/local/sbin:$PATH"
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/kakalin/opt/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/kakalin/opt/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/kakalin/opt/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/kakalin/opt/google-cloud-sdk/completion.zsh.inc'; fi
