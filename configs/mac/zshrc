@@ -127,9 +127,6 @@ elif [[ -f "/usr/local/bin/brew" ]]; then
   eval "$(/usr/local/bin/brew shellenv)"
 fi
 
-# 使用變數來載入 p10k，這樣管它是哪台電腦都能通
-source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -148,8 +145,10 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-# 假設你的環境名稱是 base 或 dev，請自行修改
-conda activate py310
+# 只在 interactive shell 才啟動
+if [[ $- == *i* ]]; then
+    conda activate py310
+fi
 
 # Antigravity
 # Antigravity IDE Alias
@@ -161,11 +160,17 @@ if [ -d "/Applications/Antigravity.app" ]; then
 fi
 
 # JAVA
-JAVA_HOME="/opt/homebrew/opt/openjdk"
-PATH="$JAVA_HOME/bin:$PATH"
+export JAVA_HOME="/opt/homebrew/opt/openjdk"
+[[ -d "$JAVA_HOME/bin" ]] && export PATH="$JAVA_HOME/bin:$PATH"
 
 # Android
-ANDROID_HOME="$HOME/Library/Android/sdk"
-ANDROID_NDK_HOME="$HOME/Library/Android/sdk/ndk/21.4.7075529"
-ANDROID_SDK_TOOL="$ANDROID_HOME/platform-tools"
-PATH="$ANDROID_HOME:$ANDROID_NDK_HOME:$ANDROID_SDK_TOOL:$PATH"
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export ANDROID_NDK_HOME="$ANDROID_HOME/ndk/21.4.7075529"
+export ANDROID_SDK_TOOL="$ANDROID_HOME/platform-tools"
+[[ -d "$ANDROID_HOME" ]] && export PATH="$ANDROID_HOME:$PATH"
+[[ -d "$ANDROID_NDK_HOME" ]] && export PATH="$ANDROID_NDK_HOME:$PATH"
+[[ -d "$ANDROID_SDK_TOOL" ]] && export PATH="$ANDROID_SDK_TOOL:$PATH"
+
+# glog
+alias glog="git log --oneline --decorate --graph"
+# alias glog="git log --oneline --decorate --graph --all"
