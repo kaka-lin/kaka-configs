@@ -1,13 +1,23 @@
 # 🚀 Mac Terminal - Zsh + P10k + Solarized 安裝指南
 
-## 1. 基礎工具安裝: Homebrew
+本指南提供 macOS 環境的終端機設定，包含 Homebrew、Oh My Zsh、Powerlevel10k 主題以及 iTerm2 的 Solarized 配色方案。
+
+## 0. 前置作業：安裝字體 (Fonts)
+
+在開始安裝主題之前，強烈建議先安裝 **Nerd Fonts**，否則 Powerlevel10k 的圖示將無法正常顯示。
+
+- **建議字體**：[MesloLGS NF](https://github.com/romkatv/dotfiles-public/tree/master/.local/share/fonts/NerdFonts) (P10k 官方推薦)
+- **安裝方式**：下載 `.ttf` 檔案後連點兩下安裝。
+- **設定**：安裝後，需在 iTerm2 的 **Settings > Profiles > Text > Font** 選取該字體。
+
+## 1. 基礎工具安裝: `Homebrew`
 
 ```bash
 # 安裝 Homebrew (如果尚未安裝)
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-設定 Homebrew 路徑，編輯 `~/.zshrc` 加入：
+設定 `Homebrew` 路徑，編輯 `~/.zshrc` 加入：
 
 ```zsh
 # 自動偵測 Homebrew 路徑 (相容 Intel/M 系列)
@@ -59,7 +69,7 @@ p10k configure
 
 ## 4. Solarized 配色方案 (三位一體設定)
 
-### 4.1 檔案顏色 (dircolors)
+### 4.1 檔案顏色 (`dircolors`)
 
 ```bash
 mkdir -p ~/.dir_colors
@@ -83,6 +93,6 @@ curl -O https://raw.githubusercontent.com/altercation/iterm2-colors-solarized/ma
 
 下載完成後，用以下方式匯入：
 
-按 `Cmd + ,` (即 **iTerm2 -> Settings / Preferences**) > **Profiles > Colors > Color Presets... > Import...**，選取下載的檔案
-
-匯入後，在同一個 **Color Presets...** 選單中選取 **Solarized Dark** 即完成套用。
+1. 按 `Cmd + ,` (即 **iTerm2 -> Settings / Preferences**)
+2. 進入 **Profiles > Colors > Color Presets... > Import...**，選取下載的檔案
+3. 匯入後，在同一個 **Color Presets...** 選單中選取 **Solarized Dark** 即完成套用。

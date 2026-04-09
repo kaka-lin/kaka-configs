@@ -6,7 +6,8 @@
 
 - `configs/mac/`: macOS 專用設定 (zsh, vim)
 - `configs/ubuntu/`: Ubuntu / Linux 專用設定
-- `configs/shared/`: 跨平台共用資源 (Solarized dircolors, vim themes, ssh config, p10k)
+- `configs/shared/themes/`: 跨平台共用視覺資源 (Solarized, P10k 主題)
+- `configs/shared/ssh/`: 跨平台共用通訊設定 (SSH Config)
 
 ## 🚀 快速開始
 
