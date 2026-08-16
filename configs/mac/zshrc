@@ -147,16 +147,7 @@ unset __conda_setup
 
 # 只在 interactive shell 才啟動
 if [[ $- == *i* ]]; then
-    conda activate py310
-fi
-
-# Antigravity
-# Antigravity IDE Alias
-# 這裡假設你的應用程式名稱叫 Antigravity，請確認路徑
-if [ -d "/Applications/Antigravity.app" ]; then
-    alias ag='open -a "Antigravity"'
-    # 如果你想用 command line 開啟檔案，改用下面這行
-    # alias ag='/Applications/Antigravity.app/Contents/MacOS/Antigravity'
+    conda activate py311
 fi
 
 # JAVA
@@ -174,3 +165,19 @@ export ANDROID_SDK_TOOL="$ANDROID_HOME/platform-tools"
 # glog
 alias glog="git log --oneline --decorate --graph"
 # alias glog="git log --oneline --decorate --graph --all"
+
+# ---- Antigravity 雙數位孿生快捷鍵 ----
+
+# 1. 核心編輯器 (IDE) 快捷鍵
+if [ -d "/Applications/Antigravity IDE.app" ]; then
+    # 輸入 ag 快速打開 IDE 介面
+    alias ag='open -a "Antigravity IDE"'
+    # 輸入 ag-cli 使用終端機 CLI（例如 ag-cli . 打開當前資料夾）
+    alias ag-cli='"/Applications/Antigravity IDE.app/Contents/Resources/app/bin/antigravity-ide"'
+fi
+
+# 2. 代理管理器 (Manager) 快捷鍵
+if [ -d "/Applications/Antigravity.app" ]; then
+    # 輸入 agm 專門打開那個純對話的 Agent 管理面板
+    alias agm='open -a "Antigravity"'
+fi
