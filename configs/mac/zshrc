@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 # gnome-terminal-colors-solarized
 # ~/.dir_colors/themefile
@@ -181,3 +181,9 @@ if [ -d "/Applications/Antigravity.app" ]; then
     # 輸入 agm 專門打開那個純對話的 Agent 管理面板
     alias agm='open -a "Antigravity"'
 fi
+
+# gstack browse: 固定用已安裝的 chromium-1234，避免每次重抓
+export GSTACK_CHROMIUM_PATH="$HOME/Library/Caches/ms-playwright/chromium-1234/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing"
+
+# Added by Antigravity IDE
+export PATH="$HOME/.antigravity-ide/antigravity-ide/bin:$PATH"
